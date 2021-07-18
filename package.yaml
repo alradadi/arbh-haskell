@@ -1,0 +1,27 @@
+name:                arbh-haskell
+version:             0.1.0.0
+
+dependencies:
+- base >= 4.7 && < 5
+- table-layout
+- bytestring
+- http-conduit
+- async
+- time
+
+library:
+  source-dirs: src
+
+executables:
+  arbh-haskell-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+     - -Wall
+     - -threaded
+     - -rtsopts
+     - -with-rtsopts=-N
+    dependencies:
+      - arbh-haskell
+    default-extensions:
+      - OverloadedStrings
